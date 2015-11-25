@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8" />
+	<title>login</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link rel="shortcut icon" href="../static/images/ico/favicon.ico"
+		th:href="@{/images/ico/favicon.ico}" />
+	<link rel="stylesheet" href="../static/bootstrap/3.3.5/css/bootstrap.min.css" 
+		th:href="@{/bootstrap/3.3.5/css/bootstrap.min.css}" />
+	<link rel="stylesheet" href="../static/bootstrap/3.3.5/css/bootstrap-theme.min.css" 
+		th:href="@{/bootstrap/3.3.5/css/bootstrap-theme.min.css}" />
+	<link rel="stylesheet" href="../static/css/signin.css"
+		th:href="@{/css/signin.css}"/>
+	<style type="text/css"></style>
+</head>
+
+<body>
+	<div class="signin-wrapper">
+		<div class="title-wrap">
+			<label>登录管理入口</label>
+		</div>
+	
+		<div class="box">
+			<div class="content-wrap">
+				<p>登录界面</p>
+				<form id="signin-form" class="signin-form" name="loginForm">
+					<div class="input-group">
+						<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+						<input id="username" class="form-control" type="text" name="username" placeholder="用户名" /> 
+					</div>
+					<div class="input-group">
+						<span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+						<input id="password" class="form-control" type="password" name="password" placeholder="密码" /> 
+					</div>
+					<div>
+						<div class="input-group col-md-7" style="float:left">
+							<span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>
+							<input id="captcha" class="form-control" type="text" name="captcha" placeholder="验证码" />
+						</div>
+						<div>
+							<img id="img-code" src="/randImgCodeCreater" alt="无法显示"/>
+						</div>
+					</div>
+					
+					<div style="clear:both">
+						<!-- <input id="signin" type="submit" class="btn btn-primary" onclick="javascript:signin()" value="登录" /> -->
+						<a id="signin" href="#" class="btn btn-primary" onclick="javascript:signin()">登&nbsp;录</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	
+	</div>
+	
+	<script src="../static/jquery/2.1.4/jquery-2.1.4.min.js"
+			th:src="@{/jquery/2.1.4/jquery-2.1.4.min.js}"></script>
+	<script src="../static/jquery-validate/1.14.0/jquery.validate.min.js"
+			th:src="@{/jquery-validate/1.14.0/jquery.validate.min.js}"></script>
+	<script src="../static/js/signin.js"
+			th:src="@{/js/signin.js}"></script>
+</body>
+</html>
