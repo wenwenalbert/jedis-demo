@@ -1,6 +1,6 @@
 package com.autonavi.shanghai.redisdemo.domain;
 
-public class User {
+public class User extends Partial {
 
 	private Long userId;
 	private String username;
