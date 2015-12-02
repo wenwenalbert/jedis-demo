@@ -44,7 +44,7 @@ public class JedisDriverImplTest {
 	@Test 
 	public void test1() {
 		User user = new User();
-		user = mapper.getUser(2L);
+		user = mapper.getUser(10L);
 		logger.debug(JSON.toJSONString(user));
 		
 		logger.debug(JSON.toJSONString(mapper.getUserAll()));

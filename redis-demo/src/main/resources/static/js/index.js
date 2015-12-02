@@ -2,65 +2,28 @@
 $(function() {
 	var table = $("#example").DataTable({
 
-		"columnDefs" : [ {
-			"visible" : false,
-			"targets" : -1
-		} ]
-
-	});
-	
-	$('#example-getting-started').multiselect({
-		includeSelectAllOption: true,
-		selectAllText: 'All',
-		buttonWidth: '200px',
-		allSelectedText: 'All',
-	});
-});
-
-$('#datetimepicker').datetimepicker({
-	format : 'yyyy-mm-dd',
-	language : 'zh-CN',
-	weekStart : 0,
-	todayBtn : true,
-	todayHighlight : true,
-	autoclose : true,
-	startView : 2,
-	minView : 2,
-	forceParse : true,
-	pickDate: false
-});
-
-function uploadFile() {
-	var files = $("#file")[0].files; // js 获取文件对象
-	
-	var FileController = "/file/upload"; // 接收上传文件的后台地址
-	
-	console.log(files);
-	var form = new FormData();
-	if (files.length != 0) {
+		"ordering" : false,
+		// "searching" : false,
+		"iDisplayLength" : 5,
+		// 设置每页显示记录的下拉菜单
+		"aLengthMenu" : [ [ 5, 10, 15 ], [ "5", "10", "15" ] ],
+		"scrollX" : true,
+		"pagingType" : "full_numbers",
+		"oLanguage" : {
+			"sLengthMenu" : "每页显示 _MENU_ 条",
+			"sZeroRecords" : "无匹配数据",
+			"sInfo" : "当前显示  _START_ - _END_ 条   共  _TOTAL_ 条记录",
+			"sInfoEmpty" : "当前显示   0 ~ 0 条 / 共 0 条记录",
+			"sInfoFiltered" : "/ 从 _MAX_ 条记录中筛选出",
+			"sSearch" : "搜索:",
+			"oPaginate" : {
+				"sFirst" : "首页",
+				"sLast" : "尾页",
+				"sPrevious" : "上一页",
+				"sNext" : "下一页"
+			}
+		},
 		
-		for (var j = 0; j < files.length; j++) {
-			form.append("files", files[j]); // 文件对象
-		}
-	}
-	console.log($("#name").val());
-	form.append("name", $("#name").val());
-	xmlHttpRequest = new XMLHttpRequest();
-	xmlHttpRequest.onreadystatechange = callback;
-	xmlHttpRequest.open("post", FileController, true);
+	});
 	
-	xmlHttpRequest.send(form);
-}
-
-function callback() {
-	// 接收响应数据
-	// 判断对象状态是否交互完成，如果为4则交互完成
-	if (xmlHttpRequest.readyState == 4) {
-		// 判断对象状态是否交互成功,如果成功则为200
-		if (xmlHttpRequest.status == 200) {
-			// 接收数据,得到服务器输出的纯文本数据
-			var response = xmlHttpRequest.responseText;
-			alert(response);
-		}
-	}
-}
+});
